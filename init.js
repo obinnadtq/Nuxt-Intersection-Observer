@@ -2,6 +2,6 @@ import { Client, Databases } from 'appwrite';
 const client = new Client();
 client
     .setEndpoint('http://localhost/v1') 
-    .setProject('62cfd79665a5474f17f8');
+    .setProject('<Project Id>');
 
-export const database = new Databases(client, '62cfdb9aac8ee3e726eb');
+export const database = new Databases(client, '<database Id>');

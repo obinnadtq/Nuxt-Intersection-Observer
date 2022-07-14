@@ -21,7 +21,7 @@ export default {
   methods: {
     async getComments(){
        try {
-          const response = await database.listDocuments('62d0536ac6b5c5beee2f', [], 100);
+          const response = await database.listDocuments('<collection Id>', [], 100);
           this.comments = response.documents;
         } catch(err){
             console.log(err);
