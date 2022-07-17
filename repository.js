@@ -5,7 +5,7 @@ const client = new sdk.Client();
 
 client
     .setEndpoint('http://localhost/v1') // Your API Endpoint
-    .setProject('62d36c0cbd6d0e15affe') // Your project ID
+    .setProject('<project id>') // Your project ID
     .setKey('<api key>');
 
 const database = new sdk.Databases(client, '<database id>');
