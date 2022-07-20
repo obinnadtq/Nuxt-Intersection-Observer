@@ -15,14 +15,18 @@ export default {
   name: 'IndexPage',
   data(){
     return{
-      comments: []
+      comments: [],
+      offset: 0,
+      commentsPerPage: 10
     }
   },
   methods: {
     async getComments(){
        try {
-          const response = await database.listDocuments('<collection id>', [], 100);
-          this.comments = response.documents;
+          const response = await database.listDocuments('<collection id>', [], this.commentsPerPage, this.offset);
+          this.offset += this.commentsPerPage;
+          const docs = response.documents;
+          this.comments = [...this.comments, ...docs];
         } catch(err){
             console.log(err);
         }
