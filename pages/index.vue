@@ -23,7 +23,9 @@ export default {
   methods: {
     async getComments(){
        try {
-          const response = await database.listDocuments('<collection id>', [], this.commentsPerPage, this.offset);
+        console.log(process.env.COLLECTIONID)
+          const response = await database.listDocuments(process.env.COLLECTIONID, [], this.commentsPerPage, this.offset);
+          
           this.offset += this.commentsPerPage;
           const docs = response.documents;
           this.comments = [...this.comments, ...docs];
